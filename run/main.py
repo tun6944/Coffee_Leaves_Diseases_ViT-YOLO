@@ -9,7 +9,7 @@ from ultralytics import YOLO
 from transformers import ViTForImageClassification, ViTImageProcessor
 from fastapi.responses import HTMLResponse
 #  CONFIG 
-YOLO_MODEL_PATH = "models/best.pt"
+YOLO_MODEL_PATH = "models/last.pt"
 VIT_MODEL_DIR = "models/vit"
 DEVICE = "cuda"
 CONF_THRES = 0.05

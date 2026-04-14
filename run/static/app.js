@@ -9,7 +9,7 @@ const loadingDiv = document.getElementById('loading');
 const canvasContainer = document.getElementById('canvas-container');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-
+const confidence = 0.8;
 let currentFile = null;
 
 // Handle drag and drop events
@@ -131,7 +131,7 @@ function drawBoxes(detections) {
     let shownCount = 0;
     if (detections && detections.length > 0) {
         detections.forEach((det, idx) => {
-            if (det.confidence >= 0.4) {
+            if (det.confidence >= confidence) {
                 const [x1, y1, x2, y2] = det.bbox;
                 
                 // Draw box
