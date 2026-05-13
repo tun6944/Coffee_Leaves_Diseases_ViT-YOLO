@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -11,7 +12,11 @@ from fastapi.responses import HTMLResponse
 #  CONFIG 
 YOLO_MODEL_PATH = "models/last.pt"
 VIT_MODEL_DIR = "models/vit"
-DEVICE = "cuda"
+DEVICE = os.getenv("DEVICE", "cuda")
+if DEVICE == "cuda" and not torch.cuda.is_available():
+    DEVICE = "cpu"
+    print("[INFO] CUDA is not available, switching to CPU.")
+print(f"[INFO] Using device: {DEVICE}")
 CONF_THRES = 0.05
 IMG_SIZE = 224
 #

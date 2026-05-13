@@ -1,18 +1,35 @@
 ### Step 1
-Run the pip install command below: 
-```
-cd run
-pip install -r requirements.txt
+
+Change directory to _run_ folder
 
 ```
+cd run
+
+```
+
 ### Step 2
-Run the command below to run Uvicorn 
+
+Run the pip install command below:
+
+```
+python -m pip install -r requirements.txt
+
+```
+
+### Step 3
+
+Run the command below to run Uvicorn
+
 ```
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 
 ```
-### Step 3
+
+### Step 4
+
 Access localhost webpage
+
 ```
 http://localhost:8000/
+
 ```
