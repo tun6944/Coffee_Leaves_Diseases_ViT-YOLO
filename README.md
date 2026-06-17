@@ -12,7 +12,7 @@ cd run
 Run the pip install command below:
 
 ```
-python -m pip install -r requirements.txt
+python -m pip install -r requirements.txt -q
 
 ```
 
