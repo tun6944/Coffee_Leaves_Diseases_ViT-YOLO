@@ -3,6 +3,7 @@ test_images/
 __pycache__/
 .venv/
 docs/
+1 so mau benh/
 *.docx
 *.zip
 *.rar
